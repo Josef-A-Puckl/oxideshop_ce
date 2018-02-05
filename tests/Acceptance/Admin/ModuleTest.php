@@ -184,6 +184,7 @@ class ModuleTest extends ModuleBaseTest
         $this->assertActivationButtonIsPresent();
         $this->assertDeactivationButtonIsNotPresent();
         $this->clickAndWait("//form[@id='myedit']//input[@value='Activate']");
+        $this->waitForFrameToLoad('basefrm');
         $this->assertDeactivationButtonIsPresent();
         $this->assertActivationButtonIsNotPresent();
     }
@@ -199,6 +200,7 @@ class ModuleTest extends ModuleBaseTest
         $this->testModuleActivationWorksInNormalMode();
 
         $this->clickAndWait("//form[@id='myedit']//input[@value='Deactivate']");
+        $this->waitForFrameToLoad('basefrm');
         $this->assertActivationButtonIsPresent();
         $this->assertDeactivationButtonIsNotPresent();
     }
@@ -252,6 +254,7 @@ class ModuleTest extends ModuleBaseTest
         $this->loginAdmin("Extensions", "Modules");
         $this->openListItem("Test module #6 (in vendor dir)");
         $this->clickAndWait("//form[@id='myedit']//input[@value='Activate']");
+        $this->waitForFrameToLoad('basefrm');
         $this->assertElementPresent("//form[@id='myedit']//input[@value='Deactivate']");
         $this->assertTextPresent("1.0");
         $this->assertTextPresent("OXID eSales");
@@ -307,6 +310,7 @@ class ModuleTest extends ModuleBaseTest
         $this->clickAndWait("link=Test module #6 (in vendor dir)");
         $this->frame("edit");
         $this->clickAndWait("//form[@id='myedit']//input[@value='Activate']");
+        $this->waitForFrameToLoad('basefrm');
         $this->assertElementPresent("//form[@id='myedit']//input[@value='Deactivate']");
         $this->selectMenu("Extensions", "Modules");
         $this->frame("edit");
@@ -329,6 +333,7 @@ class ModuleTest extends ModuleBaseTest
         $this->clickAndWait("link=Test module #6 (in vendor dir)");
         $this->frame("edit");
         $this->clickAndWait("//form[@id='myedit']//input[@value='Activate']");
+        $this->waitForFrameToLoad('basefrm');
         $this->assertElementPresent("//form[@id='myedit']//input[@value='Deactivate']");
         $this->selectMenu("Extensions", "Modules");
         $this->clickAndWait("link=Test module #6 (in vendor dir)");
@@ -382,6 +387,7 @@ class ModuleTest extends ModuleBaseTest
         $this->clickAndWait("link=Test module #6 (in vendor dir)");
         $this->frame("edit");
         $this->clickAndWait("//form[@id='myedit']//input[@value='Activate']");
+        $this->waitForFrameToLoad('basefrm');
         $this->assertElementPresent("//form[@id='myedit']//input[@value='Deactivate']");
         $this->selectMenu("Extensions", "Modules");
         $this->frame("edit");
